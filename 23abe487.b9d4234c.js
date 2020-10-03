@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[5],{32:function(e,n,t){"use strict";t.r(n);var a=t(0),c=t.n(a),l=t(88),r=t(91),i=t(82);n.default=function(){var e=Object(i.a)().siteConfig;return c.a.createElement(l.a,null,c.a.createElement("h2",null,"Site config"),c.a.createElement(r.a,{src:e,collapseDepth:"3"}))}}}]);
