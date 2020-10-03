@@ -1,0 +1,47 @@
+---
+id: team-management
+title: Teams & Entities
+---
+
+import { Icon, PrimaryButton, IconButton, ActionButton, MessageBar } from '@fluentui/react';
+
+In the sidebar, under "Manage" click on [<Icon iconName="WorkforceManagement" /> Teams](https://app.monitr.be/dashboard/manage/teams/members).
+
+## Member management
+
+Make sure you've selected the "Members" tab at the top.
+
+### Create a new team
+By default, each organisation will have an "Administrators" team. They will have full access to your organisations and its entities.
+
+You can create a new team by clicking <ActionButton iconProps={{ iconName: 'Add' }}>Create Team</ActionButton> at the top of the page. Simply fill in a name and click <PrimaryButton>Add</PrimaryButton>.
+
+<MessageBar>By default, a newly created team will not have access to any of your business entities.</MessageBar>
+
+### Rename a team
+To rename your team, click the <IconButton iconProps={{ iconName: 'More' }} /> (More) icon next to the next of your team and select "<Icon iconName="Rename" /> Rename". Then start typing and press "Enter" on your keyboard to save.
+
+### Delete a team
+To rename your team, click the <IconButton iconProps={{ iconName: 'More' }} /> (More) icon next to the next of your team and select "<Icon iconName="Delete" />Delete".   
+All members in that team will be removed from the team.
+
+<MessageBar>You cannot remove your administrators team.</MessageBar>
+
+### Adding members to a team
+Click on the <IconButton iconProps={{ iconName: 'PeopleAdd' }} /> (Invite Member) icon and enter the email address of the person you want to add to the team in the pane on the right. You can add multiple email addresses at once.   
+Each person will receive and email with an invite to join the team. If the user doesn't have a Monitr account yet, they will be asked to register before joining the organisation.
+
+### Removing a member from a team
+When hovering over a member of a team, click the <IconButton iconProps={{ iconName: 'More' }} /> (More) next to the member and select "<Icon iconName="Delete" />Delete".
+
+## Entity management
+
+To manage your team's entities, make sure you select the "Entities" tab at the top of the page.   
+On this page, you will see all your teams and the business entities that your team has access to.
+
+### Assign entities to a team
+To assign a new entity to an existing team, click on <IconButton iconProps={{ iconName: 'CircleAddition' }} /> (Assign Entity) next to the name of the team.   
+In the sidebar, enter the name of the entity you wish to assign to the team. You can add multiple entities at once.
+
+### Unassign an entity from a team
+Next to an entity name, click on the <IconButton iconProps={{ iconName: 'Cancel' }} /> icon to unassign the relevant entity from the team.

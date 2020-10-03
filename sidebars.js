@@ -11,6 +11,11 @@ module.exports = {
     },
     {
       type: 'category',
+      label: 'Manage your organisation',
+      items: ['team-management'],
+    },
+    {
+      type: 'category',
       label: 'Features',
       items: ['mdx'],
     }
