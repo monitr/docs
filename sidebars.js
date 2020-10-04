@@ -6,6 +6,11 @@ module.exports = {
     },
     {
       type: 'category',
+      label: 'Setup',
+      items: ['setup/integrations/integrations'],
+    },
+    {
+      type: 'category',
       label: 'Implementation',
       items: ['doc1', 'doc2', 'doc3'],
     },

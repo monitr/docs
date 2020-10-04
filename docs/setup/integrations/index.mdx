@@ -1,0 +1,50 @@
+---
+id: integrations
+title: Integrations
+slug: ../integrations
+---
+
+import { Icon, ActionButton, MessageBar } from "@fluentui/react";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+import YukiIntegration from "./integration-yuki.mdx";
+import ExactIntegration from "./integration-exact.mdx";
+import AfasIntegration from "./integration-afas.md";
+
+Before you can use Monitr, you will have to set up an integration to connect to your accounting software.  
+To setup your integration, navigate to [<Icon iconName="PlugConnected" /> Integrations](https://app.monitr.be/dashboard/manage/integrations) in the sidebar.
+
+## Add an integration
+
+Click <ActionButton iconProps={{ iconName: 'Add' }}>Add</ActionButton> at the top of the page and select your accounting software provider.
+
+<Tabs
+  defaultValue="yuki"
+  values={[
+    { label: "Yuki", value: "yuki" },
+    { label: "Exact Online", value: "exact_online" },
+    { label: "Afas (Soon)", value: "afas" },
+  ]}
+>
+  <TabItem value="yuki">
+    <YukiIntegration />
+  </TabItem>
+  <TabItem value="exact_online">
+    <ExactIntegration />
+  </TabItem>
+  <TabItem value="afas">
+    <AfasIntegration />
+  </TabItem>
+</Tabs>
+
+Once you've added your integration, we will automatically start importing all required data from your accounting provider in the background.
+
+<MessageBar>The initial import might take a while depending on the amount of data.</MessageBar>
+
+## Data synchronisation
+
+Monitr will get data from your accounts, analytical accounts and general ledger each night. This way your dashboard will always give you an up to date view on your accounts.
+The data will be updated from the _last actuals_ date that you can set in the [<Icon iconName="Org" /> Entities](https://app.monitr.be/dashboard/organisations/entities) settings. If data prior to the _last actuals_ needs to be updated, change the _last actuals_ to an earlier date, the data will refresh overnight. Set your _last actuals_ to the correct date, after the data has been refreshed.
+
+In addition, you can sync your data manually by clicking the <ActionButton iconProps={{ iconName: 'Sync' }}>Sync now</ActionButton> button in the [<Icon iconName="Org" /> Entities](https://app.monitr.be/dashboard/organisations/entities) settings.

@@ -24,6 +24,7 @@ module.exports = {
     }
   },
   plugins: [
+    'docusaurus-plugin-sass',
     ['@docusaurus/plugin-content-docs', {
       routeBasePath: '/',
       sidebarPath: require.resolve('./sidebars.js'),
@@ -32,7 +33,7 @@ module.exports = {
     // '@docusaurus/plugin-google-analytics',
     // '@docusaurus/plugin-google-gtag',
     '@docusaurus/plugin-sitemap',
-    '@docusaurus/plugin-ideal-image'
+    // '@docusaurus/plugin-ideal-image'
   ],
   themes: [
     ['@docusaurus/theme-classic', {

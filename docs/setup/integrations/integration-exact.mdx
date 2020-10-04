@@ -1,0 +1,18 @@
+import { PrimaryButton } from "@fluentui/react";
+import BrowserFrame from "../../../src/components/atoms/BrowserFrame";
+
+import exactLoginScreenshot from "./exact-login.png";
+console.log(exactLoginScreenshot);
+
+You will be asked to select your Exact Online environment, we currently support
+
+- Belgium
+- Netherlands
+
+Once you've selected your environment, click on <PrimaryButton>Authenticate with Exact</PrimaryButton>.
+
+<BrowserFrame>
+  <img src={exactLoginScreenshot} />
+</BrowserFrame>
+
+A new window will pop up asking for your Exact Online credentials. Enter Exact Online credentials of an account that has access to all the entities you want to add. Click login to finish the integration.   
