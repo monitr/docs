@@ -25,8 +25,17 @@ i[data-icon-name] {
   display: inline;
 }
 
+a.ms-Button:hover {
+  text-decoration: none;
+}
+
 article a {
   text-decoration: underline;
+}
+
+/* Hide sidebar, not really using it */
+.navbar__toggle {
+  display: none;
 }
 
 /* Weird sidebar selector */

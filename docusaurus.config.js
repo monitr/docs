@@ -1,3 +1,6 @@
+const path = require('path');
+const { PrimaryButton } = require('@fluentui/react');
+
 module.exports = {
   title: 'Monitr',
   titleDelimiter: '-',
@@ -16,6 +19,15 @@ module.exports = {
         alt: 'Monitr Logo',
         src: 'img/logo.svg',
       },
+      items: [
+        {
+          href: 'https://app.monitr.be',
+          position: 'right',
+          component: 'button', // Use "component" instead of "type" to circumvent default theme config validation
+          text: 'Go to app',
+          target: '_blank'
+        }
+      ]
     },
     colorMode: {
       defaultMode: 'light',
