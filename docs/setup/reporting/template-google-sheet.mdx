@@ -1,0 +1,46 @@
+---
+id: template
+title: Template
+slug: ../template
+---
+
+import { Icon, ActionButton, MessageBar } from "@fluentui/react";
+import BrowserFrame from "../../../src/components/atoms/BrowserFrame";
+import saveCopyScreenshot from "./import-save-copy.png";
+import loginScreenshot from "./monitr-login-api.png";
+import structureScreenshot from "./monitr-template-structure.png";
+
+To speed up your implementation you can use our google sheets template to prepare your reporting.
+
+## Create your personal copy
+In order to get your copy of the templateg go to the [template](https://docs.google.com/spreadsheets/d/1Uy2wde2TQJM6RHmlAn2KHVc1D6ABBhiCHJFR631Ors8/edit#gid=967632221)
+and Make a copy of the file by clicking 'File' and then 'Save a copy'.
+  <MessageBar>Make a copy of the google sheets to avoid exposing your credentials</MessageBar>  
+<BrowserFrame>
+  <img src={saveCopyScreenshot} />
+</BrowserFrame>
+
+## Start building your reports
+After you made your personal copy of the file enter your emailadres, password and select the entity that you want to build a reporting for.
+<BrowserFrame>
+  <img src={loginScreenshot} />
+</BrowserFrame>
+
+## Structure of the template
+The definitions can be made in the the tabsheets that are highlighted in yellow.
+Each tabsheet is constructed in a similar manner with:
+- The definition: this is the part that needs to be saved as a CSV file to be uploaded into Monitr.
+- Extra information: fields that help you creating your definition.
+- Detailed validations: Validations rules applied to each row of your definition, to avoid having errors when uploading your CSV file into Monitr.
+- Validation Summary: This gives an overview of the status of each validation (out of the detailed validation). A brief summary of the validation rule is given.
+<BrowserFrame>
+  <img src={structureScreenshot} />
+</BrowserFrame>
+
+More information on how to create the defition for each tabsheet can be found here:
+- [Cash flow](./cash-flow)
+- [Reporting](./pl-bs)
+- [Mapping](./mapping)
+- [Budget versions](./budget-versions)
+- [Budget accounts](./budget-accounts)
+- [Budgets](./budgets)

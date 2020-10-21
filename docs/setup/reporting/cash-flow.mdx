@@ -1,0 +1,49 @@
+---
+id: cash-flow
+title: Cash Flow
+slug: ../cash-flow
+---
+
+import { Icon, ActionButton, MessageBar } from "@fluentui/react";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+import CashFlowTabCSV from "./cash-flow-csv.mdx";
+import CashFlowTabUI from "./cash-flow-ui.mdx";
+
+## What is the Cash flow statement?
+A Cash flow statement gives an overview of the sources and the use of funds for a certain period of time.
+You can create a Cash flow statement in two ways:
+1. Direct Cash flow statement: allocating each transaction in your cash & bank to a category
+1. Indirect Cash flow statement: calculated based on the transactions in your general ledger accounts (other then your cash & bank)
+
+Monitr uses the indirect method to calculate the Cash flow. We will allocate transactions from the Profit & loss statement and the Balance sheet to categories in the Cash flow statement.
+Cash & Bank accounts, and accounts that don't have a cash impact (see some examples [here](/examples-cf))
+
+<MessageBar>The Cash statement needs to be defined in order to define Profit & loss statement and Balance sheet.</MessageBar>
+
+## Setup a Cash flow statement
+Monitr allows you to tailor the Cash flow statement entirely to your needs. [Go to tab 'Reporting' - 'Cash Flow'](https://app.monitr.be/dashboard/organisations/entities/definitions/mapping).
+This can either be done via a CSV upload or in the user interface (see below)
+The Cash Flow table contains three fields:
+- Rank: the order in which lines of the cash flow are shown in dashboards
+- Name: the label that will be shown in dahboards for this line of the cash flow
+- Parent: This field is used to manage the subtotals of your Cash flow statement. e.g. to create a subtotal 'Total cash flow'  of the lines 'Operational cash flow' and 'Financial cash flow'
+    - Create a line ''Total cash flow'
+    - Enter 'Total cash flow' in the field 'Partent' of the 'Operational cash flow' and 'Financial cash flow'
+
+
+
+<Tabs
+  defaultValue="ui"
+  values={[
+    { label: "Via User Interface", value: "ui" },
+    { label: "Via CSV", value: "csv" },
+  ]}>
+<TabItem value="csv">
+    <CashFlowTabCSV />
+</TabItem>
+<TabItem value="ui">
+    <CashFlowTabUI />
+</TabItem>
+</Tabs>

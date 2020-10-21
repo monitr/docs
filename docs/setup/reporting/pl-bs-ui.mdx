@@ -1,0 +1,27 @@
+import { Icon, ActionButton, PrimaryButton, MessageBar } from "@fluentui/react";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+
+To create a Profit & Loss statement and Balance Sheet via the Monitr user interface:
+1. [Go to tab 'Reporting' - 'Profit&Loss' or 'Balance Sheet'](https://app.monitr.be/dashboard/organisations/entities/definitions/mapping) depending on the report you want to create.
+1. Add rows by clicking '<Icon iconName="AddLink" /> insert row'
+    1. To insert a row at a specific place select the row above where you want to insert the row (a checkmark will be visible)
+    1. Click '<Icon iconName="AddLink" /> insert row'
+1. Give the reporting line a name, if required link it to a Parent, if required link it to a line in the [Cash flow statement](./cash-flow) and indicate wether or not the line is top level
+1. Repeat this untill you have made the report statement you need
+1. Click <PrimaryButton>Save</PrimaryButton>
+1. If any errors occur they will be highlighted in red. Your report will not be saved.
+1. Fix the errors and click <PrimaryButton>Save</PrimaryButton> untill the report is succelfully saved
+
+To change the ranking of a line in a report you can drag and drop the line you want to move.
+
+## Validation 
+The following validation checks are performed:
+<Icon iconName="SkypeCheck"/> There should not be any circular references made via the 'Parent' fields
+<Icon iconName="SkypeCheck"/> A link to the Cash Flow statement should only be made on a line that is not the parent of another line
+
+## Changing your reports
+You can always change the stucture of your reports as discribed above.
+When you delete a line that has [mappings](./mapping) linked to it or make this line a parent of another line, the mappings linked to this reporting line will be deleted.
+A warning will be shown before deleting the [mappings](./mapping)

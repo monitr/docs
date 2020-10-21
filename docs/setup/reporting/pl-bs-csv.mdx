@@ -1,0 +1,41 @@
+import { Icon, ActionButton, PrimaryButton, MessageBar } from "@fluentui/react";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+You can either upload a pre-defined template (such as this file) or use tabsheet 'Reporting' our [google sheets template](./template) to define your Cash flow statement.
+
+## Defition
+Complete the folowing fields in the template
+- ID [string]: a unique identifier for the line in your report
+- Name [string]: the label shown in the reporting
+- Rank [integer]: defines the order in which the items are shown in the report
+- Parent [string]: used to define subtotals in the reporting. Enter the ID of the parent.
+- Report [string]: the report 
+- Top [1/0]: Used to indicate what lines should always appear as top level in the reporting (1: top level; 0: not top level)
+- CF_ID [string]: this is the ID of the Cash Flow table. It is used to map your balance sheet and cash flow lines to the cash flow statement. Not all lines need to be mapped (e.g. bank will not be mapped)
+
+<MessageBar>You can only create a link from a line that is not the parent of another line, and to a line in the Cash flow statement that is not the parent of antorher line</MessageBar>
+
+## Validation 
+Make sure these validations rules are respected:
+<Icon iconName="SkypeCheck"/> ID needs to be unique
+<Icon iconName="SkypeCheck"/> Rank needs to be an integer and unique for the report (BS or PL)
+<Icon iconName="SkypeCheck"/> Parent any PartentID used should exist in ID
+<Icon iconName="SkypeCheck"/> The value of Parent cannot be the same as ID
+<Icon iconName="SkypeCheck"/> The Report of the Parent should be the same as the Report of the line itself
+<Icon iconName="SkypeCheck"/> The Report needs to be BS or PL
+<Icon iconName="SkypeCheck"/> Top is 0 or 1
+<Icon iconName="SkypeCheck"/> A CF_ID should only be entered for lines without children (the ID of the line is not used in Parent) and to ID’s in the table Cash Flow without children
+
+## Upload your template
+1. Make sure the status of all validation rules in the tabsheet 'Reportign' of the templat is 'TRUE'.
+1. Copy the definition (columns with a dark blue header) in to a csv file and save it on your computer.
+1. [Go to tab 'Reporting' - 'Profit & Loss' or 'Balance Sheet'](https://app.monitr.be/dashboard/organisations/entities/definitions/mapping).
+1. Click <ActionButton>Upload</ActionButton>
+1. Browse to the CSV file on your computer and select and click 'Open'.
+1. Click <PrimaryButton>Save</PrimaryButton>
+1. If any errors occur they will be highlighted in red. Your report will not be saved.
+1. Fix the errors and click <PrimaryButton>Save</PrimaryButton> untill the report is succelfully saved
+
+<MessageBar>If you want to make changes to your reports, using our user interface click 'via user interface' above to get more information</MessageBar>
+

@@ -1,0 +1,35 @@
+import { Icon, ActionButton, PrimaryButton, MessageBar } from "@fluentui/react";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+You can either upload a pre-defined template (such as this file) or use tabsheet 'Cash flow' our [google sheets template](./template) to define your Cash flow statement.
+
+## Defition
+Complete the folowing fields in the template
+- ID [string]: a unique identifier for the line in your cash flow statement
+- Name [string]: the label shown in the reporting
+- Rank [integer]: defines the order in which the items are shown 
+- Parent [string]: used to define subtotals in the reporting. Enter the ID of the parent
+ 
+## Validation 
+Make sure these validations rules are respected:
+<Icon iconName="SkypeCheck"/> ID needs to be unique   
+<Icon iconName="SkypeCheck"/> Name is not empty  
+<Icon iconName="SkypeCheck"/> Rank needs to be an integer and unique   
+<Icon iconName="SkypeCheck"/> Parent any PartentID used should exist in ID   
+<Icon iconName="SkypeCheck"/> The value of Parent cannot be the same as ID
+
+
+## Upload your template
+1. Make sure the status of all validation rules in the tabsheet 'Cash flow' of the templat is 'TRUE'.
+1. Copy the definition (columns with a dark blue header) in to a csv file and save it on your computer.
+1. [Go to tab 'Reporting' - 'Cash Flow'](https://app.monitr.be/dashboard/organisations/entities/definitions/mapping).
+1. Click <ActionButton>Upload</ActionButton>
+1. Browse to the CSV file on your computer and select and click 'Open'.
+1. Click <PrimaryButton>Save</PrimaryButton>
+1. If any errors occur they will be highlighted in red. Your report will not be saved.
+1. Fix the errors and click <PrimaryButton>Save</PrimaryButton> untill the report is succelfully saved
+
+<MessageBar>If you want to make changes to your Cash flow statement, using our user interface click 'via user interface' above to get more information</MessageBar>
+
+
