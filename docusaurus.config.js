@@ -37,7 +37,7 @@ module.exports = {
     algolia: {
       apiKey: '81581c4e1a50191c8eca372656049226',
       indexName: 'monitr',
-      algoliaOptions: { 'facetFilters': ["type:$TYPE", "version:$VERSION"] },
+      algoliaOptions: { 'facetFilters': ["type:content", "version:current"] },
     },
   },
   plugins: [
