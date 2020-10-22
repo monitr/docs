@@ -36,10 +36,5 @@ module.exports = {
       label: 'Template',
       items: ['setup/reporting/template'],
     },
-    {
-      type: 'category',
-      label: 'Features',
-      items: ['mdx'],
-    }
   ],
 };

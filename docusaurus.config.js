@@ -7,7 +7,7 @@ module.exports = {
   tagline: '',
   url: 'https://docs.monitr.be',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'monitr', // Usually your GitHub org/user name.
   projectName: 'docs', // Usually your repo name.
@@ -33,7 +33,12 @@ module.exports = {
       defaultMode: 'light',
       disableSwitch: true,
       respectPrefersColorScheme: false,
-    }
+    },
+    algolia: {
+      apiKey: '81581c4e1a50191c8eca372656049226',
+      indexName: 'monitr',
+      algoliaOptions: { 'facetFilters': ["type:$TYPE", "version:$VERSION"] },
+    },
   },
   plugins: [
     'docusaurus-plugin-sass',
@@ -51,6 +56,6 @@ module.exports = {
     ['@docusaurus/theme-classic', {
       customCss: require.resolve('./src/css/custom.css'),
     }],
-    // '@docusaurus/theme-search-algolia'
+    '@docusaurus/theme-search-algolia'
   ],
 };

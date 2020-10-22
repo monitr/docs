@@ -15,17 +15,19 @@ Complete the folowing fields in the template
 - CF_ID [string]: this is the ID of the Cash Flow table. It is used to map your balance sheet and cash flow lines to the cash flow statement. Not all lines need to be mapped (e.g. bank will not be mapped)
 
 <MessageBar>You can only create a link from a line that is not the parent of another line, and to a line in the Cash flow statement that is not the parent of antorher line</MessageBar>
+<br />
 
 ## Validation 
 Make sure these validations rules are respected:
-<Icon iconName="SkypeCheck"/> ID needs to be unique
-<Icon iconName="SkypeCheck"/> Rank needs to be an integer and unique for the report (BS or PL)
-<Icon iconName="SkypeCheck"/> Parent any PartentID used should exist in ID
-<Icon iconName="SkypeCheck"/> The value of Parent cannot be the same as ID
-<Icon iconName="SkypeCheck"/> The Report of the Parent should be the same as the Report of the line itself
-<Icon iconName="SkypeCheck"/> The Report needs to be BS or PL
-<Icon iconName="SkypeCheck"/> Top is 0 or 1
-<Icon iconName="SkypeCheck"/> A CF_ID should only be entered for lines without children (the ID of the line is not used in Parent) and to ID’s in the table Cash Flow without children
+<Icon iconName="SkypeCheck"/> ID needs to be unique <br />
+<Icon iconName="SkypeCheck"/> Rank needs to be an integer and unique for the report (BS or PL) <br />
+<Icon iconName="SkypeCheck"/> Parent any PartentID used should exist in ID <br />
+<Icon iconName="SkypeCheck"/> The value of Parent cannot be the same as ID <br />
+<Icon iconName="SkypeCheck"/> The Report of the Parent should be the same as the Report of the line itself <br />
+<Icon iconName="SkypeCheck"/> The Report needs to be BS or PL <br />
+<Icon iconName="SkypeCheck"/> Top is 0 or 1 <br />
+<Icon iconName="SkypeCheck"/> A CF_ID should only be entered for lines without children (the ID of the line is not used in Parent) and to ID’s in the table Cash Flow without children <br />
+<br />
 
 ## Upload your template
 1. Make sure the status of all validation rules in the tabsheet 'Reportign' of the templat is 'TRUE'.
