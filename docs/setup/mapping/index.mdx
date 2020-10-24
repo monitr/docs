@@ -3,3 +3,29 @@ id: mapping
 title: Mapping
 slug: ../mapping
 ---
+
+import { Icon, ActionButton, PrimaryButton, MessageBar } from "@fluentui/react";
+import BrowserFrame from "../../../src/components/atoms/BrowserFrame";
+import changeAxisScreenshot from "./change-axis.png";
+
+## What are mappings?
+In the table mapping you will link the transactions on your general ledger to your Profit & loss statement and Balance sheet.
+Mappings can be made either on a general ledger account or if applicable on the combination of a general ledger account and a selected analytical axis.
+
+## How can you use analytical axis in mappings?
+E.g. if you use the cost centers in Exact Online to register costs per department, you can map the combination of the general ledger account '620500 - Wages' and cost center 'Sales' to the reporting line 'Personnel Costs - Sales' in your Profit & loss statement.
+
+Before you can use analytical axis in your mappings you need to select what axis to use in the [settings of your entity](https://app.monitr.be/dashboard/organisations/entities).
+Select the analytical axis you would like to use and click <PrimaryButton>Save</PrimaryButton>.
+
+You can select to following options (if used in your accounting):
+- None
+- Cost Center (Exact Online)
+- Cost Unit (Exact Online)
+- Project (Yuki, Exact Online) <br />
+
+<BrowserFrame>
+  <img src={changeAxisScreenshot} />
+</BrowserFrame>
+
+
