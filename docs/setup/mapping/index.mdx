@@ -7,10 +7,19 @@ slug: ../mapping
 import { Icon, ActionButton, PrimaryButton, MessageBar } from "@fluentui/react";
 import BrowserFrame from "../../../src/components/atoms/BrowserFrame";
 import changeAxisScreenshot from "./change-axis.png";
+import mappingScreenshot from "./unmapped.png";
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+import MappingTabCSV from "./mapping-csv.mdx";
+import MappingTabUI from "./mapping-ui.mdx";
+
+
 
 ## What are mappings?
 In the table mapping you will link the transactions on your general ledger to your Profit & loss statement and Balance sheet.
-Mappings can be made either on a general ledger account or if applicable on the combination of a general ledger account and a selected analytical axis.
+Mappings can be made either on a general ledger account, or if applicable on the combination of a general ledger account and a selected analytical axis.
 
 ## How can you use analytical axis in mappings?
 E.g. if you use the cost centers in Exact Online to register costs per department, you can map the combination of the general ledger account '620500 - Wages' and cost center 'Sales' to the reporting line 'Personnel Costs - Sales' in your Profit & loss statement.
@@ -28,4 +37,41 @@ You can select to following options (if used in your accounting):
   <img src={changeAxisScreenshot} />
 </BrowserFrame>
 
+## Setup your mapping
+You can setup your mapping either by uploading a CSV file or via our user-interface.
+
+The mappings table contains the following fields:
+- Account: General ledger account used for the mapping
+- Account description: Description of the selected Account
+- Code: Code of the analytical axis used for the mapping, if analytical axis is selected in the [settings of your entity](https://app.monitr.be/dashboard/organisations/entities).
+- Analytical axis description: Description of the selected analytical Code.
+- Report line: The report line (Profit and loss and Balance sheet) that to wich the mapping is allocated. You can only map to report lines that are not a parent of other report lines.
+- Report: the report of the selected Report line.
+- Top Level: The name of the Report line of the first parent that is indicated as Top level in the definition of the Profit & loss statement or Balance sheet.
+- Comment: Optional comments.
+- Transactions: click  '<ActionButton iconProps={{ iconName: 'RedEye' }}></ActionButton>' to quickly get an overview of the transactions booked on a mapping.
+
+Every time your general ledger is refreshed Monitr will check for General ledger accounts (or a combination of General ledger accounts and analytical axis if selected) that have not been defined in the mapping table. 
+If unmapped transaction occur these will be presented at the top of the mapping table, highlighted in blue. Make sure to map these transaction to the correct 'report line' to ensure your reporting is complete.
+You can filter the mappings to only show the unmapped transactions by clicking  '<ActionButton iconProps={{ iconName: 'ToggleLeft' }}></ActionButton>' next to Account Mapping.
+
+<BrowserFrame>
+  <img src={mappingScreenshot} />
+</BrowserFrame>
+
+<MessageBar>If you have unmapped transactions in your general ledger this will be indicated as an error in validations.</MessageBar>
+
+<Tabs
+  defaultValue="ui"
+  values={[
+    { label: "Via User Interface", value: "ui" },
+    { label: "Via CSV", value: "csv" },
+  ]}>
+<TabItem value="csv">
+    <MappingTabCSV />
+</TabItem>
+<TabItem value="ui">
+    <MappingTabUI />
+</TabItem>
+</Tabs>
 

@@ -1,0 +1,20 @@
+import { Icon, ActionButton, PrimaryButton, MessageBar } from "@fluentui/react";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+
+
+To create your mapping via the Monitr user interface:
+1. [Go to tab 'Mapping'](https://app.monitr.be/dashboard/organisations/entities/definitions/mapping).
+1. You can complete pre-filled rows highlighted in blue or add rows by clicking '<Icon iconName="AddLink" /> insert row'
+1. Select the report line to which you want to allocate the mapping in the column 'Report line'. 
+1. Click <PrimaryButton>Save</PrimaryButton>
+1. If any errors occur they will be highlighted in red. Your report will not be saved.
+1. Fix the errors and click <PrimaryButton>Save</PrimaryButton> untill the report is succelfully saved
+
+
+## Validation 
+The following validation checks are performed:
+<Icon iconName="SkypeCheck"/> Mappings (combination of general ledger accounts and analytical axis if applicable) should be unique <br />
+<Icon iconName="SkypeCheck"/> One general ledger account can only be linked to one report (Profit & Loss or Balancesheet) if multiple mappings occur (analytical axis) <br />
+<br />

@@ -1,0 +1,32 @@
+import { Icon, ActionButton, PrimaryButton, MessageBar } from "@fluentui/react";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+
+## Defition
+Complete the folowing fields in the template
+- Account [string]: the code of the general ledger account
+- Analytical Account [string]: the code of the analytical account (optional)
+- ReportingID [string]: the ID of the 
+- Comment [string]: A comment (optional)
+
+## Validation 
+Make sure these validations rules are respected:
+<Icon iconName="SkypeCheck"/> The combination of Account and Analytical Account needs to be unique <br />
+<Icon iconName="SkypeCheck"/> The Account needs to exist in your accounting <br />
+<Icon iconName="SkypeCheck"/> The Analytical Account needs exist in your accounting <br />
+<Icon iconName="SkypeCheck"/> A mapping to a reporting line needs to be made in Reporting ID <br />
+<Icon iconName="SkypeCheck"/> The Mapping needs to be made to a reporting line without children <br />
+
+
+## Upload your template
+1. Make sure the status of all validation rules in the tabsheet 'Mapping' of the template is 'TRUE'.
+1. Copy the definition (columns with a dark blue header) in to a csv file and save it on your computer.
+1. [Go to tab 'Mapping'](https://app.monitr.be/dashboard/organisations/entities/definitions/mapping).
+1. Click <ActionButton>Upload</ActionButton>
+1. Browse to the CSV file on your computer and select and click 'Open'.
+1. Click <PrimaryButton>Save</PrimaryButton>
+1. If any errors occur they will be highlighted in red. Your report will not be saved.
+1. Fix the errors and click <PrimaryButton>Save</PrimaryButton> untill the report is succelfully saved
+
+<MessageBar>If you upload a CSV file with mapping, this will overwrite (not append) your current mappaings.</MessageBar>
