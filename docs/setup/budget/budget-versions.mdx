@@ -3,3 +3,38 @@ id: budget-versions
 title: Budget versions
 slug: ../budget-versions
 ---
+
+import { Icon, ActionButton, PrimaryButton, MessageBar } from "@fluentui/react";
+
+## What are budget versions?
+Monitr allows you to manage multiple versions of your budget.
+These budgets will be used to compare versus your actuals and to calculate your forecasts.
+
+There Monitr allows you to define multiple types of budget:
+- Initial budget: this is the budget that is used to compare versus my actuals. Typically this is the budget approved by your board.
+- Active budget: this is the budget that is used to calculate your forecasts <br />
+
+<MessageBar>For Monitr to function properly you need to have indicated at least one budget as 'initial'and one budget as 'active'.</MessageBar> <br />
+
+The budget version table contains the folowing fields:
+- Name: a unique name for the budget version
+- Date: date the budget version was created in Monitr
+- Initial: Toggle to indicate that a budget version is used as an initial budget. 
+- Active: Toggle to indicate that a budget version is used as an active budget. 
+- Budget Type: Indicated the source of the budget. 
+- Comment: optional comments
+
+<MessageBar>Multiple budgets can be put as 'Active' or 'Initial'. The data of these budgets will be aggregated for calculations.</MessageBar>
+
+## Manage your budget versions
+### Creating a new budget version
+- Go to tab ['budget versions'](https://app.monitr.be/dashboard/organisations/entities/definitions/budget)
+- Click '<Icon iconName="AddLink" /> insert row'
+- Enter a unique Name
+- Adjust column 'Initial' and 'Active'.
+- Click <PrimaryButton>Save</PrimaryButton>
+
+### Changing initial and active budget
+To change the budgets that are displayed in reports and dashboards:
+- Adjust column 'Initial' and 'Active'.
+- Click <PrimaryButton>Save</PrimaryButton>
