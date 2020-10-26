@@ -23,8 +23,13 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Reporting',
-      items: ['setup/reporting/cash-flow'],
+      label: 'Dashboards',
+      items: ['dashboards/dashboards'],
+    },
+    {
+      type: 'category',
+      label: 'Reports',
+      items: ['reports/reports'],
     },
     {
       type: 'category',

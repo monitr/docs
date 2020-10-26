@@ -1,0 +1,50 @@
+---
+id: reports
+title: Reports
+sidebar_label: Reports
+slug: reports
+---
+
+import BrowserFrame from "../../src/components/atoms/BrowserFrame";
+import structureScreenshot from "./structure-reports.png";
+import { Icon, ActionButton, PrimaryButton, MessageBar } from "@fluentui/react";
+
+
+## What reports are included in Monitr?
+
+You can find your reporting on [this page](https://app.monitr.be/dashboard/reports/pl/actuals).
+Your reporting is composed out of 3 reports:
+1. [Profit and Loss statement](https://app.monitr.be/dashboard/reports/pl/actuals)
+1. [Balance sheet](https://app.monitr.be/dashboard/reports/bs/actuals)
+1. [Cash flow statement](https://app.monitr.be/dashboard/reports/cf/actuals)
+
+
+For each report has multiple views displaying different data in the reportings. You can open these views by clicking the tabs at the top of the page.
+- Actuals: Displays data from your general ledger and your adjusting entries (actuals).
+- Forecast: For the period from 'Year to date start' to 'Last actuals' (Year-to-date or YTD) this tab displays the actuals. For the period from 'Last actuals' + 1 to 'Year to go end' (Year-to-go or YTG) this tab displays the actual budget.
+- Delta: This tab will compare the actuals with the initial budget YTD, the active budget with the initial budget YTG.
+
+## What is the structure of the reports?
+The reports are composed out of the folowing elements:
+- Report: This is a table with the reporting you defined. By clicking any row, column or cell in the this table you will filter the page.
+- Graph: This is a visual representation of the table. Click on any row in the Report to filter the Graph. In the Cash flow statement your cash balance will also be displayed.
+- Transaction Details: This is a detail of the data displayed in the report.
+- Filter: Use these filters to change the data and period displayed on the page.
+
+<BrowserFrame>
+  <img src={structureScreenshot} />
+</BrowserFrame>
+
+## Navigating your report
+You can drilldown from the report to transaction level data.
+Expand more details of your report by clicking '<ActionButton iconProps={{ iconName: 'ChevronRight' }}></ActionButton>'.
+By expanding the lowest level op your report the mappings included in this Report line will be displayed. This way you can easily trace number to their source.
+
+By clicking any row, column or cell in the this table you will filter the page. Using this feature you can display line item details from your general ledger (and adjusting entries).
+
+You can sort the transaction details by clicking the header of the column your would like to sort on.
+
+If you are using Exact Online you can double click general ledger transactions in the Transaction details to display the related booking.
+
+
+
