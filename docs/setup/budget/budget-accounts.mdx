@@ -3,3 +3,44 @@ id: budget-accounts
 title: Budget accounts
 slug: ../budget-accounts
 ---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+import BudgetAccountTabCSV from "./budget-accounts-csv.mdx";
+import BudgetAccountTabUI from "./budget-accounts-ui.mdx";
+
+import { Icon, ActionButton, PrimaryButton, MessageBar } from "@fluentui/react";
+
+## What are budget accounts?
+Budget accounts are used to allocate your budgets to your reporting. This is done by linking them to [mappings](./mapping).
+<MessageBar messageBarIconProps={{ iconName: 'Feedback' }} styles={{ root: { backgroundColor: 'white', border: '1px solid grey ' } }}> 
+    E.g. in my budget I have a caption 'Personnel Costs - SLS'. To allocate this to the reporting line 'Personnel Costs - Sales' I link the Budget account 'Personnel Costs - SLS' to '620200 - SLS' in column mapping. The Mapping '620200 - SLS' is allocated to the Report line 'Personnel costs - Sales' in the mapping table 
+</MessageBar>
+
+
+The table Budget Accounts contains the following fields:
+- Budget Account: Unique name of the budget account. 
+- Mapping: a link to the [mapping](./mapping) where you want to allocate the budgets linked to the budget account to.
+- Comment: optional comment
+
+<MessageBar>
+    Make sure that the name used as Budget Account is identical to the Budget Accounts used in the Budgets. Make sure not to have spaces at the start or the end of your Budget Accounts.
+</MessageBar>
+
+You upload your Budget accounts via CSV or enter them via the user interface via [the tab 'Budget Accounts'](https://app.monitr.be/dashboard/organisations/entities/definitions/budget)
+
+
+<Tabs
+  defaultValue="ui"
+  values={[
+    { label: "Via User Interface", value: "ui" },
+    { label: "Via CSV", value: "csv" },
+  ]}>
+<TabItem value="csv">
+    <BudgetAccountTabCSV />
+</TabItem>
+<TabItem value="ui">
+    <BudgetAccountTabUI />
+</TabItem>
+</Tabs>
