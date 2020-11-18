@@ -19,7 +19,7 @@
     "@docusaurus/plugin-sitemap": "^2.0.0-alpha.66",
     "@docusaurus/theme-classic": "^2.0.0-alpha.66",
     "@docusaurus/theme-search-algolia": "^2.0.0-alpha.66",
-    "@fluentui/react": "^7.150.0",
+    "@fluentui/react": "^7.150.1",
     "@mdx-js/react": "^1.6.21",
     "@uifabric/icons": "^7.5.17",
     "clsx": "^1.1.1",
