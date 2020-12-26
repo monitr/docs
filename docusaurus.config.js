@@ -1,5 +1,4 @@
 const path = require('path');
-const { PrimaryButton } = require('@fluentui/react');
 
 module.exports = {
   title: 'Monitr',
@@ -33,6 +32,9 @@ module.exports = {
       defaultMode: 'light',
       disableSwitch: true,
       respectPrefersColorScheme: false,
+    },
+    footer: {
+      links: []
     },
     algolia: {
       apiKey: '81581c4e1a50191c8eca372656049226',
