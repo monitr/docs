@@ -1,0 +1,27 @@
+import { ActionButton } from "@fluentui/react";
+import BrowserFrame from "../../../src/components/atoms/BrowserFrame";
+
+import importCsvScreenshot from "./import-csv-wizard.png";
+
+You will be asked to enter an Entity Name. This makes sure if you have multiple entities within this organisation, that you are able to import CSV files for all of them.
+
+Once you save the Entity name, the app will ask you to redirect you to the Entity settings page and import CSV's from there.
+
+<br/>
+
+## CSV Import
+
+In your Entity card you will see an <ActionButton iconProps={{ iconName: 'Table' }}>Import CSV</ActionButton> button, click it, and this will open the Import CSV wizard.
+
+<BrowserFrame>
+  <img src={importCsvScreenshot} />
+</BrowserFrame>
+
+Importing your CSV file consists out of 3 steps:
+1. Select your file
+2. Decide if you would like to overwrite (delete your current general ledger in Monitr) or append to your general ledger and what you use as a decimal separator
+3. Map your columns onto our database structure. To make sure we have the correct information, the first 5 columns are required.
+
+In case something is wrong with your file the app will show an error message on the issue.
+
+End the process by clicking on the <ActionButton iconProps={{ iconName: 'CloudUpload' }}>Upload</ActionButton> button. Monitr will take over from here and keep you updated on the process of downloading and parsing your file.

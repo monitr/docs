@@ -1,0 +1,14 @@
+import { Icon, ActionButton, MessageBar } from "@fluentui/react";
+
+Once you've added your integration, we will automatically start importing all required data from your accounting provider in the background.
+
+<MessageBar>The initial import might take a while depending on the amount of data.</MessageBar>
+
+<br/>
+
+## Data synchronisation
+
+Monitr will get data from your accounts, analytical accounts and general ledger each night. This way your dashboard will always give you an up to date view on your accounts.
+The data will be updated from the _last actuals_ date that you can set in the [<Icon iconName="Org" /> Entities](https://app.monitr.be/dashboard/organisations/entities) settings. If data prior to the _last actuals_ needs to be updated, change the _last actuals_ to an earlier date, the data will refresh overnight. Set your _last actuals_ to the correct date, after the data has been refreshed.
+
+In addition, you can sync your data manually by clicking the <ActionButton iconProps={{ iconName: 'Sync' }}>Sync now</ActionButton> button in the [<Icon iconName="Org" /> Entities](https://app.monitr.be/dashboard/organisations/entities) settings.
