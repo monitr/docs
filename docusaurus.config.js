@@ -11,7 +11,7 @@ module.exports = {
   organizationName: 'monitr', // Usually your GitHub org/user name.
   projectName: 'docs', // Usually your repo name.
   themeConfig: {
-    sidebarCollapsible: false,
+    hideableSidebar: false,
     navbar: {
       style: 'primary',
       logo: {
@@ -33,9 +33,9 @@ module.exports = {
       disableSwitch: true,
       respectPrefersColorScheme: false,
     },
-    footer: {
-      links: []
-    },
+    // footer: {
+    //   links: []
+    // },
     algolia: {
       apiKey: '81581c4e1a50191c8eca372656049226',
       indexName: 'monitr',
@@ -51,7 +51,12 @@ module.exports = {
     '@docusaurus/plugin-debug',
     // '@docusaurus/plugin-google-analytics',
     // '@docusaurus/plugin-google-gtag',
-    '@docusaurus/plugin-sitemap',
+    ['@docusaurus/plugin-sitemap', {
+      cacheTime: 600 * 1000, // 600 sec - cache purge period
+      changefreq: 'weekly',
+      priority: 0.5,
+      trailingSlash: false,
+    }],
     // '@docusaurus/plugin-ideal-image'
   ],
   themes: [
