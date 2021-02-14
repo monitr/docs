@@ -22,8 +22,15 @@ module.exports = {
         {
           href: 'https://app.monitr.be',
           position: 'right',
-          component: 'button', // Use "component" instead of "type" to circumvent default theme config validation
-          text: 'Go to app',
+          component: 'defaultButton', // Use "component" instead of "type" to circumvent default theme config validation
+          text: 'Login',
+          target: '_blank'
+        },
+        {
+          href: 'https://monitrbv.pipedrive.com/scheduler/QXbrrJUY/product-demo',
+          position: 'right',
+          component: 'primaryButton',
+          text: 'Request a demo',
           target: '_blank'
         }
       ]

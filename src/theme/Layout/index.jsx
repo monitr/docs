@@ -30,11 +30,14 @@ const theme = createTheme({
     white: "#ffffff",
   },
   semanticColors: {
+    navigationTop: "#193153", // Custom
     inputBackgroundChecked: "#FADB0F",
     primaryButtonBackground: "#FADB0F",
+    primaryButtonBackgroundHovered: "#eecf04",
+    primaryButtonBackgroundPressed: "#caaf03",
     primaryButtonText: currentTheme.semanticColors.bodyText,
     primaryButtonTextHovered: currentTheme.semanticColors.bodyText,
-    primaryButtonBackgroundHovered: "#eecf04",
+    primaryButtonTextPressed: currentTheme.semanticColors.bodyText,
   },
 });
 
