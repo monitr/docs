@@ -21,7 +21,7 @@ module.exports = {
     },
     {
       type: 'doc',
-      id: 'validations',
+      id: 'validations/validations',
     },
     {
       type: 'doc',
