@@ -19,16 +19,21 @@ Budget accounts are used to allocate your budgets to your reporting. This is don
 </MessageBar>
 
 
-The table Budget Accounts contains the following fields:
+The table Budget Accounts contains the following required fields:
 - Budget Account: Unique name of the budget account. 
 - Mapping: a link to the [mapping](./mapping) where you want to allocate the budgets linked to the budget account to.
+
+
+Next to this there are optional fields that are used for automated forecasts or are just imformative:
+- Payment term: Used for the automated forecast "net working capital budget". This field is used to indicate the number of months delay a cash flow has versus revenue and costs in the respective budget account. E.g. If budget revenue in period 1, but the payment of this revenue will only be in period 3. Set this field to 2 months.
+- Budget account payment: Used for the automated forecast "net working capital budget". This field is used to select the budget account that is use to forecast the cash flow mutation of the payment terms. E.g. the example above: the revenue is made in period 1, but cash is only expected in period 3. Set this field to the budget account linked to your accounts receivable. This way we will decrease your cashflow in period 1 and increase it in period 3 when using "net working capital budget".
 - Comment: optional comment
 
 <MessageBar>
     Make sure that the name used as Budget Account is identical to the Budget Accounts used in the Budgets. Make sure not to have spaces at the start or the end of your Budget Accounts.
 </MessageBar>
 
-You upload your Budget accounts via CSV or enter them via the user interface via [the tab 'Budget Accounts'](https://app.monitr.be/dashboard/organisations/entities/definitions/budget)
+You upload your Budget accounts via CSV or enter them via the user interface via [the tab 'Budget Accounts'](https://app.monitr.be/dashboard/organisations/entities/definitions/budget/accounts)
 
 
 <Tabs

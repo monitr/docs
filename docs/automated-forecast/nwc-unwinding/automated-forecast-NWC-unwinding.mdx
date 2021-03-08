@@ -1,0 +1,57 @@
+---
+id: net-working-capital-unwinding
+title: Net working capital unwinding
+slug: ../automated-forecast-NWC-unwinding
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+import { Icon, ActionButton, PrimaryButton, MessageBar } from "@fluentui/react";
+
+import BrowserFrame from "../../../src/components/atoms/BrowserFrame";
+import NWCUnwindingStep1 from "./nwc-unwinding-step1.jpg";
+import NWCUnwindingStep2 from "./nwc-unwinding-step2.jpg";
+import NWCUnwindingStep3 from "./nwc-unwinding-step3.jpg";
+import NWCUnwindingStep4 from "./nwc-unwinding-step4.jpg";
+
+Monitr allows you to automate your forecasts thanks to API integrations and calculation modules.
+Automated forecasts can be created from the [Budget Versions page ](./budget-versions).
+
+With the automated forecast 'net working capital unwinding' you can forecast the cash flows related to your outstanding customer - and supplier balances. 
+
+## Creating a new automated forecast
+Before you can use this forecast need have setup budget accounts linked to your accounts payable en accounts receivable in your reporting.
+We will use these accounts include the expected unwinding of your open balances in your cash flow forecast.
+
+E.g. we have created a Budget account 'AP' that is linked to mapping '440000' which is the general ledger account used for my accounts payable in my accounting. And Budget account 'AR' that is linked to mapping '400000' that is linked the general ledger account of my accounts receivable.
+
+Once you have created these budget accounts you need to indicate which Budget accounts you want to use for the automated forecast:
+1. [In the settings](https://app.monitr.be/dashboard/organisations/entities/definitions/budget/settings/nwc); or
+1. In the first step of the wizard, as discussed below.
+
+- Go to tab ['budget versions'](https://app.monitr.be/dashboard/organisations/entities/definitions/budget/versions)
+- Click '+  New budget version' > 'Automation' > 'net working capital unwinding'
+- **Step 1: Settings**
+<BrowserFrame> <img src={NWCUnwindingStep1} /></BrowserFrame>
+- Make sure that a budget account is linked for both 'Accounts Receivable' and 'Accounts Payable'. Make sure to click 'save' if you made changes.
+- Use the checkmarks to indicate if you want to forecast the unwinding of your accounts receivable, accounts payable or both.
+- Click <PrimaryButton>Next</PrimaryButton>
+- **Step 2: Options**
+<BrowserFrame> <img src={NWCUnwindingStep2} /></BrowserFrame>
+- Select the reference date. Select the month as of when you want to forecast. e.g. if I select Feyar buildbruary 2021 I will start a forecast as of February 2021 using the open balances per 31/01/2021.
+- A namefor your budget version is generated automatically, but you can change it.
+- Click <PrimaryButton>Next</PrimaryButton>
+- **Step 3: Custom Due Dates**
+- <BrowserFrame> <img src={NWCUnwindingStep3} /></BrowserFrame>
+- All invoices that are oper for the selected reference date are displayed per supplier / customer. The due date indicated is the due date of the invoice. If an invoice is over due, this date will automatically be changed to the 7th day of the reference month selected in step 2.
+- Review the due dates: By using the date picker next to a certain invoice, you can change te due date used in the cash flow forecast. This 'custom due date' will be stored and will be completed automatically next time you use the automated forecast 'net working capital unwinding'
+- Click <PrimaryButton>Next</PrimaryButton>
+- Depending on your selection in Step 1 you will have to do this for accounts receivable, accounts payable or both.
+- **Step 4: Summary**
+<BrowserFrame> <img src={NWCUnwindingStep4} /></BrowserFrame>
+- A summary of the expected cash flow is shown
+- - Click <PrimaryButton>Finish</PrimaryButton> to save the budget version.
+- Adjust column 'Initial' and 'Active'.
+- Click <PrimaryButton>Save</PrimaryButton>
+

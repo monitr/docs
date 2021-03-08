@@ -1,21 +1,27 @@
-import { Icon, ActionButton, PrimaryButton, MessageBar } from "@fluentui/react";
+import { Icon, ActionButton, PrimaryButton, MessageBar, Toggle } from "@fluentui/react";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
+import BrowserFrame from "../../../src/components/atoms/BrowserFrame";
+import cashflowView from "./cash-flow-view.png";
+
+
+The user interface to create a new report is split into two views.
+1. Tree view: Shows you how the reporting lines are related to each other in the form of a tree.
+2. Report View: Displays you how the report will be visualized in your dashboards, and will change based on the alterations you make in the tree view.
+
+<br />
+<BrowserFrame>
+  <img src={cashflowView} />
+</BrowserFrame>
 
 To create a Cash flow statement via de Monitr user interface:
-1. [Go to tab 'Reporting' - 'Cash Flow'](https://app.monitr.be/dashboard/organisations/entities/definitions/mapping).
-1. Add rows by clicking '<Icon iconName="AddLink" /> insert row'
-    1. To insert a row at a specific place select the row above where you want to insert the row (a checkmark will be visible)
-    1. Click '<Icon iconName="AddLink" /> insert row'
-1. Give the cash flow reporting line a name and if required link it to a Parent
+1. [Go to tab 'Reporting' - 'Cash Flow'](https://app.monitr.be/dashboard/organisations/entities/definitions/reporting/reporting/CF).
+1. Add rows by clicking '<Icon iconName="AddLink" /> insert row' which will add a new row at the top of the list.
+1. Drag and drop it to the correct location. When dropping it on an other line, it will add it as a sibling of that line.
+1. Give the cash flow reporting line a name
+1. Set <Toggle label="Top Level" onText="On" offText="Off" defaultChecked styles={{ root:{ display: "inline-block", verticalAlign: "middle", margin: "0px 5px" }}} /> to "On" if you would like to see it in the top of your report view.
 1. Repeat this untill you have made the Cash flow statement you need
 1. Click <PrimaryButton>Save</PrimaryButton>
 1. If any errors occur they will be highlighted in red. Your report will not be saved.
 1. Fix the errors and click <PrimaryButton>Save</PrimaryButton> untill the report is succelfully saved
-
-To change the ranking of a line in a Cash flow statement you can drag and drop the line you want to move.
-
-## Validation 
-The following validation checks are performed:
-<Icon iconName="SkypeCheck"/> There should not be any circular references made via the 'Parent' fields

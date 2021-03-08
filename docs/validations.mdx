@@ -1,0 +1,54 @@
+---
+id: validations
+title: Validations
+sidebar_label: Validations
+slug: validations
+---
+
+import BrowserFrame from "../src/components/atoms/BrowserFrame";
+import { Icon, } from "@fluentui/react";
+import Valid from "./valid.jpg";
+import Invalid from "./invalid.jpg";
+
+Monitr allows you to build reliable reporting.
+To ensure your reports are complete and valid, Monitr will perform a number of validations:
+1. Check balance sheet: is the total of my balance sheet 0?
+1. Check cash flow: is my indirect cash flow in Monitr equal to the mutation on of my bank (in my accounting)?
+1. Unmapped accounts: are there any general ledger transactions linked to mappings that are not defined in Monitr.
+
+If all these checks are valid a checkmark <Icon iconName='CheckMark' /> will be shown in the sidebar next to 'Validations'.
+On the validation page you will only have a tab 'Balance Sheet' and 'Cash Flow'.
+<BrowserFrame> <img src={Valid} /></BrowserFrame>
+
+If there is an issue on one of these validations a warning <Icon iconName='Warning' styles={{ root:{ color: '#FF8C00' }}} /> will be shown in the sidebar next to 'Validations'.
+On the validation page there will be a warning next to the tab where an issue has been noted. Next to the tabs 'Balance Sheet' and 'Cash Flow', the tab 'Unmapped' account will be show if there are transactions that are not mapped to the reports.
+<BrowserFrame> <img src={Invalid} /></BrowserFrame>
+
+## Check balance sheet
+### Checks performed
+In the tab 'Balance Sheet' we will check if the total of the balace sheets equals to zero. If the total of your balance sheet equals to zero the bottom line in the tab will indicate 'Yes'.
+
+If your balance does not equal to zero, Monitr will check if this is due to the result appropriation (period per year to date start until the last date of the month) not being booked yet.  If the total of the balance sheet equals the net result (reporting line selected 'Custom metrics') of the period the bottom line will also indicate 'yes'.
+
+If both these checks return an error, the bottom line will indicate 'No' for the periods where there is an issue.
+
+### Possible solutions
+- There are unmapped transactions: complete the mappings
+- The result of a prior period has not been appropriated in your accounting: book the result appropriation for this period in your accounting or as an adjusting entry in Monitr.
+
+## Check cash flow
+### Check performed
+In the tab 'Cash Flow' we will check if the indirect cash flow Monitr calculates based on your reporting is equal to general ledger transaction of mapping linked to your bank (reporting line selected in 'Custom metrics').
+If these two are not equal this will be indicated with 'No' in the bottom row.
+
+### Possible solutions
+- There are unmapped transactions: complete the mappings
+- There is an issue in your definition of the cash flow statement and how reporting lines link to this (from your profit & loss statement and balance sheet)
+
+## Unmapped Accounts
+### Check performed
+The tab 'Unmapped' account will be show if there are transactions that are not mapped to the reports. The total value of the unmapped transactions will be shown per period.
+This total can be 0, when the unmapped transactions balance to zero.
+
+### Possible solutions
+- There are unmapped transactions: complete the mappings

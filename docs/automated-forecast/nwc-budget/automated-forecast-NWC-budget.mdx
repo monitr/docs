@@ -1,0 +1,37 @@
+---
+id: net-working-capital-budget
+title: Net working capital budget
+slug: ../automated-forecast-NWC-budget
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+import { Icon, ActionButton, PrimaryButton, MessageBar } from "@fluentui/react";
+
+import BrowserFrame from "../../../src/components/atoms/BrowserFrame";
+import NWCBudgetSetup from "./nwc-budget-setup.jpg";
+import NWCBudgetSetup1 from "./nwc-budget-setup1.jpg";
+
+
+Monitr allows you to automate your forecasts thanks to API integrations and calculation modules.
+Automated forecasts can be created from the [Budget Versions page ](./budget-versions).
+
+With the automated forecast 'net working capital budget' you can forecast the impact of payments terms of a selected budget on your cash flow.
+
+## Creating a new automated forecast
+With the forecast automation 'net working capital budget' you will be able to forecast the impact of payment terms selected Budget Accounts.
+Before you create a new budget version you need to have setup:
+1. Budget accounts for accounts payable and accounts receivable. E.g. we have created a Budget account 'AP' that is linked to mapping '440000' which is the general ledger account used for my accounts payable in my accounting. And Budget account 'AR' that is linked to mapping '400000' that is linked the general ledger account of my accounts receivable.
+1. The payment terms for the selected budget accounts. E.g. in the example below all revenue in the selected budget on Budget Account "Revenue - Basic Plan" will be deducted from the cash flow in the month of the revenue (in reporting line in the cash flow statement where Budget account AR is linked, in this case 'Net working capital') and will be added to the cash flow of the next month (also as a mutation in the NWC).
+<BrowserFrame> <img src={NWCBudgetSetup} /></BrowserFrame>
+Once you have finished this setup you can create a new budget version:
+- Go to https://app.monitr.be/dashboard/organisations/entities/definitions/budget/versions
+- Click - Click '+  New budget version' > 'Automation' > 'net working capital budget'
+<BrowserFrame> <img src={NWCBudgetSetup1} /></BrowserFrame>
+- Select the 'Reference budget version': this is the budget for wich you would like to calculate the NWC mutations
+- Select the 'Reference date'. Select the month as of when you want to forecast. e.g. if I select February 2021 I will start a forecast as of February 2021 using the data from the selected budget version starting Februari 2021.
+- The budget version will automatically receive a name. You can change this in the field 'New budget version name'.
+- Click <PrimaryButton>Save</PrimaryButton>
+- Adjust column 'Initial' and 'Active'.
+- Click <PrimaryButton>Save</PrimaryButton>

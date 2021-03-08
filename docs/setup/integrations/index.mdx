@@ -4,22 +4,29 @@ title: Integrations
 slug: ../integrations
 ---
 
-import { Icon, ActionButton } from "@fluentui/react";
+import { Icon, ActionButton, PrimaryButton } from "@fluentui/react";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
 import YukiIntegration from "./integration-yuki.mdx";
 import ExactIntegration from "./integration-exact.mdx";
-import AfasIntegration from "./integration-afas.mdx";
 import CsvIntegration from "./integration-csv.mdx";
 import DataSync from "./integration-data-sync.mdx";
+import MultiEntities from "./integration-multiple-entities.mdx";
+
+import BrowserFrame from "../../../src/components/atoms/BrowserFrame";
+import integrationView from "./integrations-view.png";
 
 Before you can use Monitr, you will have to set up an integration to connect to your accounting software.  
 To setup your integration, navigate to [<Icon iconName="PlugConnected" /> Integrations](https://app.monitr.be/dashboard/manage/integrations) in the sidebar.
 
+<BrowserFrame>
+  <img src={integrationView} />
+</BrowserFrame>
+
 ## Add an integration
 
-Click <ActionButton iconProps={{ iconName: 'Add' }}>Add</ActionButton> at the top of the page and select your accounting software provider.
+Click <PrimaryButton text="Add" /> on the accountancy software integration that you use for your company, and you wish to connect to Monitr. If it's not available yet you can always use CSV files to upload your general ledger.
 
 <Tabs
   defaultValue="yuki"
@@ -27,22 +34,19 @@ Click <ActionButton iconProps={{ iconName: 'Add' }}>Add</ActionButton> at the to
     { label: "Yuki", value: "yuki" },
     { label: "Exact Online", value: "exact_online" },
     { label: "CSV File", value: "csv" },
-    { label: "Afas (Soon)", value: "afas" },
   ]}
 >
   <TabItem value="yuki">
     <YukiIntegration />
+    <MultiEntities />
     <DataSync />
   </TabItem>
   <TabItem value="exact_online">
     <ExactIntegration />
+    <MultiEntities />
     <DataSync />
   </TabItem>
   <TabItem value="csv">
     <CsvIntegration />
-  </TabItem>
-  <TabItem value="afas">
-    <AfasIntegration />
-    <DataSync />
   </TabItem>
 </Tabs>

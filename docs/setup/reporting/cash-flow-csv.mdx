@@ -10,21 +10,22 @@ Complete the folowing fields in the template
 - Name [string]: the label shown in the reporting
 - Rank [integer]: defines the order in which the items are shown 
 - Parent [string]: used to define subtotals in the reporting. Enter the ID of the parent
+- Top [1/0]: Used to indicate what lines should always appear as top level in the reporting (1: top level; 0: not top level)
  
 ## Validation 
 Make sure these validations rules are respected:   
 <Icon iconName="SkypeCheck"/> ID needs to be unique <br />
 <Icon iconName="SkypeCheck"/> Name is not empty <br />
 <Icon iconName="SkypeCheck"/> Rank needs to be an integer and unique <br />
-<Icon iconName="SkypeCheck"/> Parent any PartentID used should exist in ID <br />
+<Icon iconName="SkypeCheck"/> Parent any ParentID used should exist in ID <br />
 <Icon iconName="SkypeCheck"/> The value of Parent cannot be the same as ID <br />
+<Icon iconName="SkypeCheck"/> Top is 0 or 1 <br />
 <br />
-
 
 ## Upload your template
 1. Make sure the status of all validation rules in the tabsheet 'Cash flow' of the template is 'TRUE'.
 1. Copy the definition (columns with a dark blue header) in to a csv file and save it on your computer.
-1. [Go to tab 'Reporting' - 'Cash Flow'](https://app.monitr.be/dashboard/organisations/entities/definitions/mapping).
+1. [Go to tab 'Reporting' - 'Cash Flow'](https://app.monitr.be/dashboard/organisations/entities/definitions/reporting/reporting/CF).
 1. Click <ActionButton>Upload</ActionButton>
 1. Browse to the CSV file on your computer and select and click 'Open'.
 1. Click <PrimaryButton>Save</PrimaryButton>

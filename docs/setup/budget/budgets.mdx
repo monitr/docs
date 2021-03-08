@@ -4,18 +4,37 @@ title: Budgets
 slug: ../budgets
 ---
 
-import { Icon, ActionButton, PrimaryButton, MessageBar } from "@fluentui/react";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
-You can manage different versions of your budget via Monitr ([see Budget Versions](./budget-versions))
-We recommend to upload your budget as a CSV file. But you can also manage your budget mannually.
+import BrowserFrame from "../../../src/components/atoms/BrowserFrame";
+import budgetsView from "./budgets-view.png";
 
-To upload your budget:
-1. [Go to tab 'Budget'](https://app.monitr.be/dashboard/organisations/entities/definitions/budget).
-1. Click <ActionButton> 'Upload' </ActionButton>
-1. A window will pop-up at the right side of your screen
-1. Select the budget version for wich you want to upload your budget
-1. Click <ActionButton> 'Upload' </ActionButton>
-1. Make sure the field Budget Account is completed for all rows. If this is not the case the Budget Account in your CSV-file was incorrect.
-1. Click <PrimaryButton> Save </PrimaryButton>
+import BudgetTabCSV from "./budgets-csv.mdx";
+import BudgetTabUI from "./budgets-ui.mdx";
 
+You can manage different versions of your budget via Monitr ([see Budget Versions](./budget-versions)).
+Use the droplist 'Budget Version' to select the budget you want to display or change.
+In this droplist you can also create a new budget version by clicking '+ new budget version'. 
 
+<MessageBar>If you have created a new budget version via '+ new budget version' on this page, don't forget to set it as an 'initial' or 'active' budget on the 'budget verions' page</MessageBar>
+
+We recommend to upload your budget as a CSV file, but you can also manage your budget mannually in our user interface.
+
+<BrowserFrame>
+  <img src={budgetsView} />
+</BrowserFrame>
+
+<Tabs
+  defaultValue="ui"
+  values={[
+    { label: "Via User Interface", value: "ui" },
+    { label: "Via CSV", value: "csv" },
+  ]}>
+<TabItem value="csv">
+    <BudgetTabCSV />
+</TabItem>
+<TabItem value="ui">
+    <BudgetTabUI />
+</TabItem>
+</Tabs>

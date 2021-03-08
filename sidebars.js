@@ -9,37 +9,43 @@ module.exports = {
       label: 'Setup',
       items: [
         'setup/integrations/integrations',
-        'setup/reporting/reporting', 
         {
-          Report:['setup/reporting/cash-flow','setup/reporting/profit-loss-balance-sheet']
+          Report: ['setup/reporting/introduction', 'setup/reporting/cash-flow', 'setup/reporting/profit-loss-balance-sheet']
         },
         'setup/mapping/mapping',
         'setup/custom-metrics/custom-metrics',
-        'setup/budget/budget',
         {
-          Files:['setup/budget/budget-versions','setup/budget/budget-accounts', 'setup/budget/budgets' ]
-        }  
+          Budget: ['setup/budget/introduction', 'setup/budget/budget-versions', 'setup/budget/budget-accounts', 'setup/budget/budgets']
+        }
       ],
     },
     {
-      type: 'category',
-      label: 'Dashboards',
-      items: ['dashboards/dashboards'],
+      type: 'doc',
+      id: 'validations',
+    },
+    {
+      type: 'doc',
+      id: 'dashboards/dashboards',
+    },
+    {
+      type: 'doc',
+      id: 'reports/reports',
     },
     {
       type: 'category',
-      label: 'Reports',
-      items: ['reports/reports'],
+      label: 'Automated Forecast',
+      items: ['automated-forecast/introduction',
+        {
+          Automations: ['automated-forecast/nwc-unwinding/net-working-capital-unwinding', 'automated-forecast/nwc-budget/net-working-capital-budget']
+        }]
     },
     {
-      type: 'category',
-      label: 'Manage your organisation',
-      items: ['team-management'],
+      type: 'doc',
+      id: 'team-management'
     },
     {
-      type: 'category',
-      label: 'Template',
-      items: ['setup/reporting/template'],
+      type: 'doc',
+      id: 'setup/reporting/template',
     },
   ],
 };

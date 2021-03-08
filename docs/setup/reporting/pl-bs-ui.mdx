@@ -1,14 +1,25 @@
-import { Icon, ActionButton, PrimaryButton, MessageBar } from "@fluentui/react";
+import { Icon, ActionButton, PrimaryButton, MessageBar, Toggle } from "@fluentui/react";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-## Setup your report
+import BrowserFrame from "../../../src/components/atoms/BrowserFrame";
+import plView from "./pl-view.png";
+
+The user interface to create a new report is split into two views.
+1. Tree view: Shows you how the reporting lines are related to each other in the form of a tree.
+2. Report View: Displays you how the report will be visualized in your dashboards, and will change based on the alterations you make in the tree view.
+
+<br />
+<BrowserFrame>
+  <img src={plView} />
+</BrowserFrame>
+
 To create a Profit & Loss statement and Balance Sheet via the Monitr user interface:
-1. [Go to tab 'Reporting' - 'Profit&Loss' or 'Balance Sheet'](https://app.monitr.be/dashboard/organisations/entities/definitions/mapping) depending on the report you want to create.
-1. Add rows by clicking '<Icon iconName="AddLink" /> insert row'
-    1. To insert a row at a specific place select the row above where you want to insert the row (a checkmark will be visible)
-    1. Click '<Icon iconName="AddLink" /> insert row'
-1. Give the reporting line a name, if required link it to a Parent, if required link it to a line in the [Cash flow statement](./cash-flow) and indicate wether or not the line is top level
+1. [Go to tab 'Reporting' - 'Profit&Loss' or 'Balance Sheet'](https://app.monitr.be/dashboard/organisations/entities/definitions/reporting/reporting/PL) depending on the report you want to create.
+1. Add rows by clicking '<Icon iconName="AddLink" /> insert row' which will add a new row at the top of the list.
+1. Drag and drop it to the correct location. When dropping it on an other line, it will add it as a sibling of that line.
+1. Give the reporting line a name, and if required link it to a line in the [Cash flow statement](./cash-flow).
+1. Set <Toggle label="Top Level" onText="On" offText="Off" defaultChecked styles={{ root:{ display: "inline-block", verticalAlign: "middle", margin: "0px 5px" }}} /> to "On" if you would like to see it in the top of your report view.
 1. Repeat this untill you have made the report statement you need
 1. Click <PrimaryButton>Save</PrimaryButton>
 1. If any errors occur they will be highlighted in red. Your report will not be saved.
@@ -16,13 +27,7 @@ To create a Profit & Loss statement and Balance Sheet via the Monitr user interf
 
 To change the ranking of a line in a report you can drag and drop the line you want to move.
 
-## Validation 
-The following validation checks are performed:
-<Icon iconName="SkypeCheck"/> There should not be any circular references made via the 'Parent' fields <br />
-<Icon iconName="SkypeCheck"/> A link to the Cash Flow statement should only be made on a line that is not the parent of another line <br />
-<br />
-
-## Changing your reports
+**Changing your reports**<br/>
 You can always change the stucture of your reports as discribed above.
 When you delete a line that has [mappings](./mapping) linked to it or make this line a parent of another line, the mappings linked to this reporting line will be deleted.
 

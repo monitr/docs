@@ -28,11 +28,17 @@ The budget version table contains the folowing fields:
 
 ## Manage your budget versions
 ### Creating a new budget version
-- Go to tab ['budget versions'](https://app.monitr.be/dashboard/organisations/entities/definitions/budget)
-- Click '<Icon iconName="AddLink" /> insert row'
-- Enter a unique Name
+- Go to tab ['budget versions'](https://app.monitr.be/dashboard/organisations/entities/definitions/budget/versions)
+- Click '+  New budget version' and select the type of budget version you want to create:
+    1. 'Simple budget': this is a budget managed ['here'](https://app.monitr.be/dashboard/organisations/entities/definitions/budget/budgets), either via CSV upload or manual input.
+    1. 'Automation' > 'net working capital unwinding' (Exact Online only): forecast the cash flows related to your outstanding customer - and supplier balances. 
+    1. 'Automation' > 'net working capital budget': forecast the impact of payments terms of a selected budget on your cash flow.
+- Follow the wizard for your selected option
 - Adjust column 'Initial' and 'Active'.
 - Click <PrimaryButton>Save</PrimaryButton>
+
+<MessageBar>You can also create a new budget version on the budgets page.</MessageBar>
+
 
 ### Changing initial and active budget
 To change the budgets that are displayed in reports and dashboards:

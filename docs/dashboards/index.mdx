@@ -5,7 +5,27 @@ sidebar_label: Dashboards
 slug: dashboards
 ---
 
-import BrowserFrame from "../../src/components/atoms/BrowserFrame";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 import { Icon, ActionButton, PrimaryButton, MessageBar } from "@fluentui/react";
 
+import KeyMetrics from "./KeyMetrics/index.mdx";
+import Receivables from "./Receivables/index.mdx";
 
+Monitr currently has two dashboard views:
+1. Key Metrics
+1. Receivables
+
+<Tabs
+  defaultValue="km"
+  values={[
+    { label: "Key Metrics", value: "km" },
+    { label: "Receivables", value: "receivables" },
+  ]}>
+<TabItem value="km">
+    <KeyMetrics />
+</TabItem>
+<TabItem value="receivables">
+    <Receivables />
+</TabItem>
+</Tabs>
